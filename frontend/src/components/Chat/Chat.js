@@ -18,6 +18,11 @@ const Chat = ( { location } ) => {
         setName(name);
         setRoom(room);
 
+        return () => {
+            socket.emit('disconnect');
+            socket.off();
+        }
+
     }, [ENDPOINT, location.search] );
 
     return (
