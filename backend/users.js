@@ -39,3 +39,6 @@ const getUser = (id) => users.find((user) => user.id === id);
 
 // Get all users in the same room
 const getUsersInRoom = (room) => users.filter((user) => user.room === room);
+
+// Export functions
+module.exports = { addUser, removeUser, getUser, getUsersInRoom };
