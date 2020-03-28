@@ -10,7 +10,7 @@ const addUser = ({ id, name, room }) => {
     room = room.trim().toLowerCase();
 
     // Check if user already exists in the room
-    const existingUser = users.find(() => {
+    const existingUser = users.find((user) => {
         return user.room === room && user.name === name;
     });
 

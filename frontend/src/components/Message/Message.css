@@ -1,0 +1,51 @@
+.singleMessage {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 5%;
+    margin-top: 3px;
+}
+
+.singleMessage__text {
+    background: #F3F3F3;
+    border-radius: 20px;
+    padding: 5px 20px;
+    color: white;
+    display: inline-block;
+    max-width: 80%;
+}
+  
+.singleMessage__text p {
+    width: 100%;
+    letter-spacing: 0;
+    float: left;
+    font-size: 1.1em;
+    word-wrap: break-word;
+}
+
+.singleMessage__name {
+    display: flex;
+    align-items: center;
+    font-family: Helvetica;
+    color: #828282;
+    letter-spacing: 0.3px;
+}
+  
+.singleMessage--current {
+    justify-content: flex-end;
+}
+
+.singleMessage--other {
+    justify-content: flex-start;
+}
+
+.singleMessage--current .singleMessage__text {
+    background: #2979FF;
+    color: white;
+}
+
+.singleMessage--other .singleMessage__text {
+    background: #F3F3F3;
+    color: #353535;
+}
+
+
