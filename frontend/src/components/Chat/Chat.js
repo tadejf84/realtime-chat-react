@@ -2,6 +2,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 
+// Import font awesome icons
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 // Import all components
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
@@ -13,6 +17,7 @@ import './Chat.css';
 
 let socket;
 const Chat = ( { location } ) => {
+
     const [name, setName] = useState(''); // state for user name
     const [room, setRoom] = useState(''); // state for room
     const [users, setUsers] = useState('');
@@ -68,11 +73,10 @@ const Chat = ( { location } ) => {
         }
     }
 
-    console.log(message, messages);
-
     return (
         <div className="container">
             <div className="chatroom">
+                <FontAwesomeIcon icon={faHome} />
                 <InfoBar room={room}/>
                 <Messages messages={messages} name={name} />
                 <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />

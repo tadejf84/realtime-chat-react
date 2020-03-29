@@ -3,6 +3,15 @@ const socketio = require('socket.io');
 const http = require('http');
 const cors = require('cors');
 const router = require('./router');
+const fs = require('fs');
+
+// CORS options
+const corsOptions = {
+    origin: 'http://localhost:3000'
+}
+
+// Get all registered users
+const usersData = JSON.parse(fs.readFileSync('./users-data.json'));
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
 
@@ -65,6 +74,10 @@ io.on('connection', (socket) => {
 });
 
 app.use(router);
-app.use(cors());
+app.use(cors(corsOptions));
+
+app.get('/usersData', function (req, res, next) {
+    res.json(usersData);
+});
 
 server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
