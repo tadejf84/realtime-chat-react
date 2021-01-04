@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 // Import component styles
 import './Input.css';
-
 
 const Input = ({ message, setMessage, sendMessage}) => {
 
